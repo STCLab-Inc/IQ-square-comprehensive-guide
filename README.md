@@ -20,24 +20,24 @@ IQ²의 설치는 명확하고 단계별로 진행됩니다. 각 구성 요소�
 
 Controller는 IQ²의 핵심 요소로, 트래픽 제어 정책을 관리합니다.
 
-- 상세 설치 가이드: [`controller-installation/README.md`](controller-installation/README.md)
+- 상세 설치 가이드: [`installation/controller/README.md`](installation/controller/README.md)
 
 ### 2. Scouter 설치
 
 Scouter는 서버의 실시간 상태를 모니터링하고, Controller에 중요 정보를 전달합니다.
 
-- 상세 설치 가이드: [`scouter-installation/README.md`](scouter-installation/README.md)
+- 상세 설치 가이드: [`installation/scouter/README.md`](installation/scouter/README.md)
 
 ### 3. Connector 설치
 
 Connector는 Controller의 지침에 따라 실제 트래픽을 제어합니다. 사용 환경에 맞는 Connector를 선택하여 설치합니다.
 
-- **API Gateway용 Connector**
-    - 상세 설치 가이드: [`connector-installation/connector-api-gateway/README.md`](connector-installation/connector-api-gateway/README.md)
-- **로드 밸런서용 Connector**
-    - 상세 설치 가이드: [`connector-installation/connector-nginx/README.md`](connector-installation/connector-nginx/README.md)
+- **NGINX용 Connector**
+    - 상세 설치 가이드: [`installation/connector/NGINX/README.md`](installation/connector/NGINX/README.md)
+- **CA Layer7 API Gateway용 Connector**
+    - 상세 설치 가이드: [`installation/connector/CA Layer7 API Gateway/README.md`](installation/connector/CA%20Layer7%20API%20Gateway/README.md)
 
-추가 Connector 설치 가이드는 `connector-installation` 하위 폴더에서 확인할 수 있습니다.
+추가 Connector 설치 가이드는 [`installation/connector/README.md`](installation/connector/README.md) 에서 확인할 수 있습니다.
 
 ---
 
