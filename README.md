@@ -1,54 +1,44 @@
-## IQ-Square 설치 가이드
+# IQ² (IQ Square) 설치 가이드
 
-**소개**
+## 소개
 
-IQ-Square는 서버의 실시간 상태를 반영하여 트래픽을 최적화하는 솔루션입니다. IQ-Square는 리소스 과부하를 방지하고, 우선순위에 따라 트래픽을 처리하며, 모든 서버 메트릭과 라우팅 통계를 통합적으로 모니터링합니다.
+IQ² (IQ Square)는 서버의 실시간 상태를 반영하여 트래픽을 최적화하는 혁신적인 솔루션입니다. 이는 리소스 과부하를 방지하고, 우선순위에 따라 트래픽을 효율적으로 처리하며, 모든 서버 메트릭과 라우팅 통계를 통합적으로 모니터링하여 서비스의 연속성과 품질을 보장합니다.
 
-**이 가이드는 IQ-Square를 설치하는 방법을 단계별로 안내합니다.**
+## 주요 구성 요소
 
-**시스템 요구사항**
+IQ²는 다음과 같은 세 가지 핵심 구성 요소로 구성되어 있습니다:
 
-* 운영 체제: Ubuntu 18.04 LTS 이상, CentOS 7.9 이상
-* CPU: 2 vCPUs 이상
-* 메모리: 4GB 이상
-* 디스크 공간: 20GB 이상
+- **Controller**: 트래픽 제어 정책을 결정하고 Connector에 실행 지침을 전달합니다.
+- **Connector**: Controller의 지침에 따라 실제 트래픽 제어를 담당합니다.
+- **Scouter**: 서버의 실시간 상태를 모니터링하고 Controller에 중요 정보를 보고합니다.
 
-**설치 단계**
+## 설치 프로세스
 
-1. **IQ-Square 라이선스를 구매합니다.**
-2. **IQ-Square 다운로드 페이지: <유효하지 않은 URL 삭제됨>에서 IQ-Square 설치 파일을 다운로드합니다.**
-3. **SSH를 사용하여 IQ-Square 서버에 연결합니다.**
-4. **다운로드한 설치 파일을 IQ-Square 서버에 업로드합니다.**
-5. **다음 명령을 사용하여 IQ-Square를 설치합니다.**
+IQ²의 설치는 명확하고 단계별로 진행됩니다. 각 구성 요소의 상세 설치 가이드를 따라 설치를 완료할 수 있습니다:
 
-```
-sudo bash iq-square-install.sh
-```
+### 1. Controller 설치
 
-6. **설치 마법사를 따라 IQ-Square를 구성합니다.**
+Controller는 IQ²의 핵심 요소로, 트래픽 제어 정책을 관리합니다.
 
-**사용 방법**
+- 상세 설치 가이드: [`controller-installation/README.md`](controller-installation/README.md)
 
-* IQ-Square 관리 콘솔에 로그인합니다.
-* IQ-Square 설정을 구성합니다.
-* IQ-Square를 사용하여 트래픽을 제어합니다.
+### 2. Scouter 설치
 
-**문제 해결**
+Scouter는 서버의 실시간 상태를 모니터링하고, Controller에 중요 정보를 전달합니다.
 
-IQ-Square를 사용하면서 문제가 발생하면 다음을 확인합니다.
+- 상세 설치 가이드: [`scouter-installation/README.md`](scouter-installation/README.md)
 
-* IQ-Square 설정이 올바르게 구성되어 있는지 확인합니다.
-* IQ-Square 로그를 확인하여 오류 메시지를 확인합니다.
-* IQ-Square 지원 포럼: <유효하지 않은 URL 삭제됨>에 문의합니다.
+### 3. Connector 설치
 
-**참고**
+Connector는 Controller의 지침에 따라 실제 트래픽을 제어합니다. 사용 환경에 맞는 Connector를 선택하여 설치합니다.
 
-* IQ-Square는 상용 소프트웨어입니다.
-* IQ-Square를 설치하기 전에 시스템 요구사항을 확인하십시오.
-* IQ-Square를 사용하기 전에 사용 설명서를 읽어보십시오.
+- **API Gateway용 Connector**
+    - 상세 설치 가이드: [`connector-installation/connector-api-gateway/README.md`](connector-installation/connector-api-gateway/README.md)
+- **로드 밸런서용 Connector**
+    - 상세 설치 가이드: [`connector-installation/connector-nginx/README.md`](connector-installation/connector-nginx/README.md)
 
-**문의**
+추가 Connector 설치 가이드는 `connector-installation` 하위 폴더에서 확인할 수 있습니다.
 
-IQ-Square에 대한 문의사항은 IQ-Square 공식 웹사이트: <유효하지 않은 URL 삭제됨>를 참조하거나, IQ-Square 지원 포럼: <유효하지 않은 URL 삭제됨>에 문의하십시오.
+---
 
-**이 가이드가 IQ-Square 설치에 도움이 되었기를 바랍니다.**
+IQ²를 선택해 주셔서 감사합니다. 설치 과정에서 질문이나 필요한 지원이 있으시면 언제든지 [이슈 트래커](#)를 통해 문의해 주세요.
