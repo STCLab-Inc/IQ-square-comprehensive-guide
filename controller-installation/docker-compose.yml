@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+  balancer-controller:
+    container_name: balancer-controller
+    hostname: balancer-controller
+    image: 863067839821.dkr.ecr.ap-northeast-2.amazonaws.com/balancer-controller:latest
+#    restart: always
+    environment:
+      BALANCER_CONTROLLER_IP: "52.78.131.199"
+      BALANCER_MASTER_API_PORT: 42000
+      BALANCER_JUDGE_LISTEN_CONNECTOR: 41000
+      BALANCER_JUDGE_LISTEN_METRIC: 41001
+      BALANCER_JUDGE_LISTEN_API: 41002
+      BALANCER_JUDGE_LISTEN_CONNECTOR_HTTP: 41003
+      BALANCER_LOADER_LISTEN_PORT: 5885
+      BALANCER_ROUTER_URL: "43.202.236.223:40000"
+      BALANCER_GRAFANA_PORT: 3000
+    volumes:
+      - balancer-data:/balancer/master-api/db:rw
+      - datasurfer-data:/balancer/DataSurfer/data:rw
+      - balancer-logs:/balancer/logs:rw
+      - grafana-data:/usr/share/grafana:rw
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "80:80"
+      - "42000:42000"
+      - "41000:41000"
+      - "41003:41003"
+      - "41001:41001"
+      - "5885:5885"
+      - "5886:5886"
+      - "3000:3001"
+
+volumes:
+    balancer-data:
+    datasurfer-data:
+    balancer-logs:
+    grafana-data:
+    grafana-logs:

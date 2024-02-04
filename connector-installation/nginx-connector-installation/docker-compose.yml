@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  balancer-nginx:
+    container_name: balancer-nginx
+    hostname: balancer-nginx
+    image: 863067839821.dkr.ecr.ap-northeast-2.amazonaws.com/balancer-nginx:latest
+#    restart: always
+    environment:
+      BALANCER_ROUTER_API_PORT: 40000
+      BALANCER_MASTER_API_HOST: "52.78.131.199"
+      BALANCER_MASTER_API_PORT: 42000
+      BALANCER_DATASURFER_RECEIVER_HOST: "52.78.131.199"
+      BALANCER_DATASURFER_RECEIVER_PORT: 5885
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "80-90:80-90"
+      - "40000:40000"
