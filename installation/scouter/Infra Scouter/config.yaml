@@ -1,0 +1,18 @@
+scouter:
+  serverName: "localhost"
+  serverIP: "127.0.0.1"
+
+masterAPI:
+  url: "http://localhost:42000/v1/startup/scouter"
+
+metrics:
+  collectionInterval: 1
+  names: ["CPU", "Memory", "DiskUsage", "DiskReadRate", "DiskWriteRate", "NetBytesSent", "NetBytesRecv"]
+#  diskName: "sda"                 # lsblk로 확인 (Mac은 diskutil list), 없으면 수집 안함
+#  networkInterfaceName: "eth0"    # netstat -i 등으로 확인, 없으면 수집 안함
+
+logging:
+  level: "info"
+#  path: "/path/to/your/logs/infra-scouter.log" # 절대경로로. 없으면 $BALANCER_HOME/logs 하위에 infra-scouter.log 형태
+  maxSize: 100 # 메가바이트 단위
+  maxAge: 7    # 일 단위
