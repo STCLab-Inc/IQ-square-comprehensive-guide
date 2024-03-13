@@ -6,12 +6,14 @@ services:
     hostname: balancer-nginx
     image: 863067839821.dkr.ecr.ap-northeast-2.amazonaws.com/balancer-nginx:latest
 #    restart: always
+    cap_add:
+      - SYS_PTRACE
     environment:
       BALANCER_ROUTER_API_PORT: 40000
       BALANCER_MASTER_API_HOST: "52.78.131.199"
       BALANCER_MASTER_API_PORT: 42000
-      BALANCER_DATASURFER_RECEIVER_HOST: "52.78.131.199"
-      BALANCER_DATASURFER_RECEIVER_PORT: 5885
+      BALANCER_DATASURFER_COLLECTOR_HOST: "52.78.131.199"
+      BALANCER_DATASURFER_COLLECTOR_PORT: 5885
     volumes:
       - /etc/localtime:/etc/localtime:ro
     ports:
