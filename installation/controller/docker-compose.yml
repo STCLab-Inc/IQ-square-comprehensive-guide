@@ -16,7 +16,6 @@ services:
       BALANCER_JUDGE_LISTEN_API: 41002
       BALANCER_JUDGE_LISTEN_CONNECTOR_HTTP: 41003
       BALANCER_LOADER_LISTEN_PORT: 5885
-      BALANCER_ROUTER_URL: "43.202.236.223:40000"
       BALANCER_GRAFANA_PORT: 3000
     volumes:
       - balancer-data:/balancer/master-api/db:rw
