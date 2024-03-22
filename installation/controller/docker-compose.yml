@@ -27,7 +27,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - nginx-cert:/balancer/master-api/cert:rw
     ports:
-      - "80:80"
       - "41010:41010"
       - "41011:41011"
       - "41020:41020"
@@ -38,7 +37,7 @@ services:
       - "41002:41002"
       - "5885:5885"
       - "5886:5886"
-      - "3000:3001"
+      - "3000:3000"
 
 volumes:
     balancer-data:
