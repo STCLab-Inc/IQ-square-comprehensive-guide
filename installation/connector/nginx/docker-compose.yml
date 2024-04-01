@@ -1,19 +1,19 @@
 version: '3.1'
 
 services:
-  balancer-nginx:
-    container_name: balancer-nginx
-    hostname: balancer-nginx
-    image: 863067839821.dkr.ecr.ap-northeast-2.amazonaws.com/balancer-nginx:latest
+  iq2-nginx:
+    container_name: iq2-nginx
+    hostname: iq2-nginx
+    image: 863067839821.dkr.ecr.ap-northeast-2.amazonaws.com/iq2-nginx:latest
 #    restart: always
     cap_add:
       - SYS_PTRACE
     environment:
-      BALANCER_ROUTER_API_PORT: 40000
-      BALANCER_MASTER_API_HOST: "BALANCER_CONTROLLER_IP"
-      BALANCER_MASTER_API_PORT: 42000
-      BALANCER_DATASURFER_COLLECTOR_HOST: "BALANCER_CONTROLLER_IP"
-      BALANCER_DATASURFER_COLLECTOR_PORT: 5885
+      IQ2_ROUTER_API_PORT: 40000
+      IQ2_MASTER_API_HOST: "IQ2_CONTROLLER_IP"
+      IQ2_MASTER_API_PORT: 42000
+      IQ2_DATASURFER_COLLECTOR_HOST: "IQ2_CONTROLLER_IP"
+      IQ2_DATASURFER_COLLECTOR_PORT: 5885
     volumes:
       - /etc/localtime:/etc/localtime:ro
     ports:
