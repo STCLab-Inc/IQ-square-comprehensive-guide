@@ -1,31 +1,31 @@
 version: '3.1'
 
 services:
-  balancer-controller:
-    container_name: balancer-controller
-    hostname: balancer-controller
-    image: 863067839821.dkr.ecr.ap-northeast-2.amazonaws.com/balancer-controller:latest
+  iq2-controller:
+    container_name: iq2-controller
+    hostname: iq2-controller
+    image: 863067839821.dkr.ecr.ap-northeast-2.amazonaws.com/iq2-controller:latest
 #    restart: always
     cap_add:
       - SYS_PTRACE
     environment:
-      BALANCER_CONTROLLER_IP: "BALANCER_CONTROLLER_IP"
-      BALANCER_MASTER_API_PORT: 42000
-      BALANCER_JUDGE_LISTEN_CONNECTOR: 41010
-      BALANCER_JUDGE_LISTEN_CONNECTOR_INFO: 41011
-      BALANCER_JUDGE_LISTEN_METRIC: 41001
-      BALANCER_JUDGE_LISTEN_API: 41002
-      BALANCER_JUDGE_LISTEN_CONNECTOR_HTTP: 41020
-      BALANCER_JUDGE_LISTEN_CONNECTOR_HTTP_INFO: 41021
-      BALANCER_DATASURFER_COLLECTOR_PORT: 5885
-      BALANCER_GRAFANA_PORT: 3000
+      IQ2_CONTROLLER_IP: "IQ2_CONTROLLER_IP"
+      IQ2_MASTER_API_PORT: 42000
+      IQ2_JUDGE_LISTEN_CONNECTOR: 41010
+      IQ2_JUDGE_LISTEN_CONNECTOR_INFO: 41011
+      IQ2_JUDGE_LISTEN_METRIC: 41001
+      IQ2_JUDGE_LISTEN_API: 41002
+      IQ2_JUDGE_LISTEN_CONNECTOR_HTTP: 41020
+      IQ2_JUDGE_LISTEN_CONNECTOR_HTTP_INFO: 41021
+      IQ2_DATASURFER_COLLECTOR_PORT: 5885
+      IQ2_GRAFANA_PORT: 3000
     volumes:
-      - balancer-data:/balancer/master-api/db:rw
-      - datasurfer-data:/balancer/DataSurfer/data:rw
-      - balancer-logs:/balancer/logs:rw
+      - iq2-data:/iq2/master-api/db:rw
+      - datasurfer-data:/iq2/DataSurfer/data:rw
+      - iq2-logs:/iq2/logs:rw
       - grafana-data:/usr/share/grafana:rw
       - /etc/localtime:/etc/localtime:ro
-      - nginx-cert:/balancer/master-api/cert:rw
+      - nginx-cert:/iq2/master-api/cert:rw
     ports:
       - "41010:41010"
       - "41011:41011"
@@ -40,9 +40,9 @@ services:
       - "3000:3000"
 
 volumes:
-    balancer-data:
+    iq2-data:
+    iq2-logs:
     datasurfer-data:
-    balancer-logs:
     grafana-data:
     grafana-logs:
     nginx-cert:
