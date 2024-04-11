@@ -19,6 +19,7 @@ services:
       IQ2_JUDGE_LISTEN_CONNECTOR_HTTP_INFO: 20010
       IQ2_DATASURFER_COLLECTOR_PORT: 20002
       IQ2_GRAFANA_PORT: 20001
+      IQ2_NGINX_MGR_PORT: 20004
     volumes:
       - iq2-data:/iq2/master-api/db:rw
       - datasurfer-data:/iq2/DataSurfer/data:rw
