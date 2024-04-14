@@ -13,7 +13,7 @@ services:
       IQ2_MASTER_API_HOST: "IQ2_CONTROLLER_IP"
       IQ2_MASTER_API_PORT: 20000
       IQ2_DATASURFER_COLLECTOR_HOST: "IQ2_CONTROLLER_IP"
-      IQ2_DATASURFER_COLLECTOR_PORT: 5885
+      IQ2_DATASURFER_COLLECTOR_PORT: 20002
     volumes:
       - /etc/localtime:/etc/localtime:ro
     ports:
