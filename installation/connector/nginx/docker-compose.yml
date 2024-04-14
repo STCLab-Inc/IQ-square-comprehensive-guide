@@ -18,4 +18,4 @@ services:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - "80-90:80-90"
-      - "40000:40000"
+      - "20004:20004"
