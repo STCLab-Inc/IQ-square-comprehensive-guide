@@ -9,6 +9,7 @@ services:
     cap_add:
       - SYS_PTRACE
     environment:
+      TZ: "Asia/Seoul"
       IQ2_CONTROLLER_IP: "IQ2_CONTROLLER_IP"
       IQ2_MASTER_API_PORT: 20000
       IQ2_JUDGE_LISTEN_CONNECTOR: 20005
