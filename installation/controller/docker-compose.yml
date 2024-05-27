@@ -24,7 +24,7 @@ services:
       IQ2_DATASURFER_QUERY_PORT: 20003
       IQ2_GRAFANA_PORT: 20001
       IQ2_NGINX_MGR_PORT: 20004
-      IQ2_SCOUTER_TYPES: "Infra,Jennifer,JVM"
+      IQ2_SCOUTER_TYPES: "Infra,JVM"
     volumes:
       - iq2-data:/iq2/master-api/db:rw
       - datasurfer-data:/iq2/DataSurfer/data:rw
