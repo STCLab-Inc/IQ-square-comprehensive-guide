@@ -29,7 +29,7 @@ services:
     volumes:
       - iq2-data:/iq2/master-api/db:rw
       - datasurfer-data:/iq2/DataSurfer/data:rw
-      - iq2-logs:/iq2/logs:rw
+      - ./iq2-logs:/iq2/logs:rw
       - grafana-data:/usr/share/grafana:rw
       - /etc/localtime:/etc/localtime:ro
       - nginx-cert:/iq2/master-api/cert:rw
