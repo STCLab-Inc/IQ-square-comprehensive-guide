@@ -10,17 +10,19 @@ services:
       - SYS_PTRACE
     environment:
       TZ: "Asia/Seoul"
-      IQ2_MASTER_API_HOST: "Host or IP address"
+      
+      IQ2_CONTROLLER_HOST: "Host or IP address"
+      IQ2_MASTER_CLUSTER_INFO: "Cluster Master IP:Port (comma separated)"
+      IQ2_DATASURFER_CLUSTER_COLLECT_INFO: "Cluster DataSurfer Collect IP:Port (comma separated)"
+
       IQ2_MASTER_API_PORT: 20000
       IQ2_JUDGE_LOG_LEVEL: INFO
-      IQ2_JUDGE_API_HOST: "Host or IP address"
       IQ2_JUDGE_LISTEN_CONNECTOR: 20005
       IQ2_JUDGE_LISTEN_CONNECTOR_INFO: 20006
       IQ2_JUDGE_LISTEN_METRIC: 20007
       IQ2_JUDGE_LISTEN_API: 20008
       IQ2_JUDGE_LISTEN_CONNECTOR_HTTP: 20009
       IQ2_JUDGE_LISTEN_CONNECTOR_HTTP_INFO: 20010
-      IQ2_DATASURFER_HOST: "Host or IP address"
       IQ2_DATASURFER_COLLECTOR_PORT: 20002
       IQ2_DATASURFER_QUERY_PORT: 20003
       IQ2_GRAFANA_PORT: 20001
