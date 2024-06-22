@@ -11,10 +11,9 @@ services:
     environment:
       TZ: "Asia/Seoul"
       IQ2_NGINX_MGR_PORT: 20004
-      IQ2_MASTER_API_HOST: "Host or IP address"
-      IQ2_MASTER_API_PORT: 20000
-      IQ2_DATASURFER_HOST: "Host or IP address"
-      IQ2_DATASURFER_COLLECTOR_PORT: 20002
+      
+      IQ2_MASTER_CLUSTER_INFO: "Cluster Master IP:Port (comma separated)"
+      IQ2_DATASURFER_CLUSTER_COLLECT_INFO: "Cluster DataSurfer Collect IP:Port (comma separated)"
     volumes:
       - /etc/localtime:/etc/localtime:ro
     ports:
