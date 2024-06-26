@@ -13,7 +13,6 @@ services:
       
       IQ2_CONTROLLER_HOST: "Host or IP address"
       IQ2_MASTER_CLUSTER_INFO: "Cluster Master IP:Port (comma separated)"
-      IQ2_DATASURFER_CLUSTER_COLLECT_INFO: "Cluster DataSurfer Collect IP:Port (comma separated)"
 
       IQ2_MASTER_API_PORT: 20000
       IQ2_JUDGE_LOG_LEVEL: INFO
