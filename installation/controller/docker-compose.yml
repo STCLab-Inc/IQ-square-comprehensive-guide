@@ -31,6 +31,7 @@ services:
       IQ2_SCOUTER_TYPES: "Infra,JVM"
     volumes:
       - iq2-data:/iq2/master-api/db:rw
+      - iq2-config:/iq2/master-api/config:rw
       - datasurfer-data:/iq2/DataSurfer/data:rw
       - ./iq2-logs:/iq2/logs:rw
       - grafana-data:/usr/share/grafana:rw
@@ -41,6 +42,7 @@ services:
 
 volumes:
     iq2-data:
+    iq2-config:
     iq2-logs:
     datasurfer-data:
     grafana-data:
