@@ -33,10 +33,10 @@ services:
       - iq2-data:/iq2/master-api/db:rw
       - iq2-config:/iq2/master-api/config:rw
       - datasurfer-data:/iq2/DataSurfer/data:rw
-      - ./iq2-logs:/iq2/logs:rw
+      - iq2-logs:/iq2/logs:rw
       - grafana-data:/usr/share/grafana:rw
-      - /etc/localtime:/etc/localtime:ro
       - nginx-cert:/iq2/master-api/cert:rw
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - "20000-20011:20000-20011"
 
