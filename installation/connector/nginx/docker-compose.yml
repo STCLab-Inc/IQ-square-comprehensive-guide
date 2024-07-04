@@ -20,3 +20,7 @@ services:
     ports:
       - "80-90:80-90"
       - "20004:20004"
+
+volumes:
+    nginx-logs:
+    nginx-mgr-logs:
