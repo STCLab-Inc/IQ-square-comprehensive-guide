@@ -9,7 +9,6 @@ services:
     cap_add:
       - SYS_PTRACE
     environment:
-      TZ: "Asia/Seoul"
       IQ2_NGINX_MGR_PORT: 20004
       
       IQ2_MASTER_CLUSTER_INFO: "Cluster Master IP:Port (comma separated)"
