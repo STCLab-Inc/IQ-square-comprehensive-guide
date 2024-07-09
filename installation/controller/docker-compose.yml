@@ -9,8 +9,6 @@ services:
     cap_add:
       - SYS_PTRACE
     environment:
-      TZ: "Asia/Seoul"
-      
       IQ2_CONTROLLER_HOST: "Host or IP address"
       IQ2_MASTER_CLUSTER_INFO: "Cluster Master IP:Port (comma separated)"
       IQ2_DATASURFER_CLUSTER_INFO: "Cluster DataSurfer IP:QueryPort (comma separated)"
