@@ -12,6 +12,7 @@ services:
       IQ2_NGINX_MGR_PORT: 20004
       
       IQ2_MASTER_CLUSTER_INFO: "Cluster Master IP:Port (comma separated)"
+      IQ2_BUILD_MODE: "opt"
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - nginx-logs:/iq2/iq2-nginx/logs:rw
