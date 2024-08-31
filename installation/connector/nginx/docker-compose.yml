@@ -16,9 +16,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - nginx-logs:/iq2/iq2-nginx/logs:rw
       - nginx-mgr-logs:/iq2/iq2-nginx/mgr/logs:rw
-    ports:
-      - "80-90:80-90"
-      - "20004:20004"
+    network_mode: "host"
 
 volumes:
     nginx-logs:
