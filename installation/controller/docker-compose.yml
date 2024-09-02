@@ -37,8 +37,7 @@ services:
       - grafana-data:/usr/share/grafana:rw
       - nginx-cert:/iq2/master-api/cert:rw
       - /etc/localtime:/etc/localtime:ro
-    ports:
-      - "20000-20011:20000-20011"
+    network_mode: "host"
 
 volumes:
     iq2-data:
