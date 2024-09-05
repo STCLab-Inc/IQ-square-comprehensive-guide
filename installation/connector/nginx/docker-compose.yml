@@ -20,5 +20,6 @@ services:
     network_mode: "host"
 
 volumes:
-    nginx-logs:
+    nginx-mgr-conf:
     nginx-mgr-logs:
+    nginx-logs:
