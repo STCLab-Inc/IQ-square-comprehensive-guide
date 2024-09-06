@@ -34,7 +34,7 @@ services:
       - iq2-config:/iq2/master-api/config:rw
       - datasurfer-data:/iq2/DataSurfer/data:rw
       - iq2-logs:/iq2/logs:rw
-      - grafana-data:/usr/share/grafana:rw
+      - grafana-data:/iq2/grafana/grafana-v11.0.0:rw
       - nginx-cert:/iq2/master-api/cert:rw
       - /etc/localtime:/etc/localtime:ro
     network_mode: "host"
