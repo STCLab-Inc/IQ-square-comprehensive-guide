@@ -14,6 +14,7 @@ services:
       IQ2_MASTER_CLUSTER_INFO: "Cluster Master IP:Port (comma separated)"
     volumes:
       - nginx-mgr-conf:/iq2/edge/iq2-nginx-mgr/conf:rw
+      - nginx-conf:/iq2/edge/iq2-nginx-mgr/nginx-conf:rw
       - nginx-mgr-logs:/iq2/edge/iq2-nginx-mgr/logs:rw
       - nginx-logs:/iq2/edge/iq2-nginx/logs:rw
       - /etc/localtime:/etc/localtime:ro
@@ -21,5 +22,6 @@ services:
 
 volumes:
     nginx-mgr-conf:
+    nginx-conf:
     nginx-mgr-logs:
     nginx-logs:
