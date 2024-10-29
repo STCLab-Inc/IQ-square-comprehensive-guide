@@ -1,7 +1,7 @@
 version: '3.1'
 
 services:
-  iq2-nginx:
+  iq2-edge:
     container_name: iq2-edge
     hostname: iq2-edge
     image: 863067839821.dkr.ecr.ap-northeast-2.amazonaws.com/iq2-edge:latest
