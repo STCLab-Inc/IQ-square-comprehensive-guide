@@ -2,9 +2,9 @@ version: '3.1'
 
 services:
   iq2-nginx:
-    container_name: iq2-nginx
-    hostname: iq2-nginx
-    image: 863067839821.dkr.ecr.ap-northeast-2.amazonaws.com/iq2-nginx:latest
+    container_name: iq2-edge
+    hostname: iq2-edge
+    image: 863067839821.dkr.ecr.ap-northeast-2.amazonaws.com/iq2-edge:latest
 #    restart: always
     cap_add:
       - SYS_PTRACE
@@ -13,9 +13,9 @@ services:
       IQ2_NGINX_MGR_PORT: 20004      
       IQ2_MASTER_CLUSTER_INFO: "Cluster Master IP:Port (comma separated)"
     volumes:
-      - nginx-mgr-conf:/iq2/iq2-nginx/mgr/conf:rw
-      - nginx-mgr-logs:/iq2/iq2-nginx/mgr/logs:rw
-      - nginx-logs:/iq2/iq2-nginx/logs:rw
+      - nginx-mgr-conf:/iq2/edge/iq2-nginx-mgr/conf:rw
+      - nginx-mgr-logs:/iq2/edge/iq2-nginx-mgr/logs:rw
+      - nginx-logs:/iq2/edge/iq2-nginx/logs:rw
       - /etc/localtime:/etc/localtime:ro
     network_mode: "host"
 
