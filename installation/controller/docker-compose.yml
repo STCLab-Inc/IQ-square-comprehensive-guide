@@ -13,7 +13,7 @@ services:
       IQ2_CONTROLLER_HOST: "Host or IP address"
       IQ2_MASTER_CLUSTER_INFO: "Cluster Master Name:IP:Port (comma separated)"
       IQ2_DATASURFER_CLUSTER_INFO: "Cluster DataSurfer IP:QueryPort (comma separated)"
-      IQ2_NGINX_CLUSTER_INFO: "Cluster Nginx Name:IP:Port (comma separated)"
+      IQ2_EDGE_CLUSTER_INFO: "Cluster Nginx Name:IP:Port (comma separated)"
 
       IQ2_MASTER_API_PORT: 20000
       IQ2_JUDGE_LOG_LEVEL: INFO
