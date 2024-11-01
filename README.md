@@ -9,7 +9,7 @@ IQ² (IQ square)는 서버의 실시간 상태를 반영하여 트래픽을 최�
 - [아키텍처](/architecture)
 - [설치 가이드](/installation)
   - [Controller](/installation/controller)
-  - [Connector](/installation/connector)
+  - [Edge](/installation/edge)
   - [Scouter](/installation/scouter)
 - [FAQ](/FAQ)
 
