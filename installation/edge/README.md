@@ -1,4 +1,4 @@
-# Connector
+# Edge
 
 ### Kernel 파라미터 설정
 1. Socket FD 수 제한 (open files)
