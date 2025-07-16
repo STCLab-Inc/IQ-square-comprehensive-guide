@@ -29,6 +29,8 @@ services:
       IQ2_GRAFANA_PORT: 20001
       IQ2_NGINX_MGR_PORT: 20004
       IQ2_RSYNC_PORT: 20011
+      IQ2_QUOTA_TCP_PORT: 20013
+      IQ2_QUOTA_HTTP_PORT: 20014
       IQ2_SCOUTER_TYPES: "Infra,Jennifer"
     volumes:
       - iq2-data:/iq2/master-api/db:rw
