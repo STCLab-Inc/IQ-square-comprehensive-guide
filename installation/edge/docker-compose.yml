@@ -12,6 +12,7 @@ services:
       IQ2_EDGE_NAME: "EDGE Name (Ex. APINF-EDGE-1)"
       IQ2_NGINX_MGR_PORT: 20004      
       IQ2_MASTER_CLUSTER_INFO: "Cluster Master IP:Port (comma separated)"
+      IQ2_NGINX_LOG_ROTATE_THRESHOLD: 100 # Unit size : MB
     volumes:
       - nginx-mgr-conf:/iq2/edge/iq2-nginx-mgr/conf:rw
       - nginx-conf:/iq2/edge/iq2-nginx-mgr/nginx-conf:rw
