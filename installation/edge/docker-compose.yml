@@ -1,10 +1,10 @@
-version: '3.1'
+version: '3.2'
 
 services:
-  iq2-edge:
-    container_name: iq2-edge
-    hostname: iq2-edge
-    image: 863067839821.dkr.ecr.ap-northeast-2.amazonaws.com/iq2-edge:latest
+  apinf-edge:
+    container_name: apinf-edge
+    hostname: apinf-edge
+    image: apinf-edge:latest
 #    restart: always
     cap_add:
       - SYS_PTRACE
@@ -20,6 +20,17 @@ services:
       - nginx-logs:/iq2/edge/iq2-nginx/logs:rw
       - /etc/localtime:/etc/localtime:ro
     network_mode: "host"
+    # networks:
+    #   - apinf-net
+    # network_mode: "bridge"
+    # ports:
+    #   - "10080:10080"
+    #   - "20004:20004"
+
+# network mode가 host일 경우 주석 처리
+# networks:
+#   apinf-net:
+#     external: true
 
 volumes:
     nginx-mgr-conf:

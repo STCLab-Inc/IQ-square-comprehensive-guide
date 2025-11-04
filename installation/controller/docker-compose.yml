@@ -1,10 +1,10 @@
-version: '3.1'
+version: '3.2'
 
 services:
-  iq2-controller:
-    container_name: iq2-controller
-    hostname: iq2-controller
-    image: 863067839821.dkr.ecr.ap-northeast-2.amazonaws.com/iq2-controller:latest
+  apinf-controller:
+    container_name: apinf-controller
+    hostname: apinf-controller
+    image: apinf-controller:latest
 #    restart: always
     cap_add:
       - SYS_PTRACE
@@ -13,9 +13,9 @@ services:
       IQ2_CONTROLLER_HOST: "Host or IP address"
       IQ2_MASTER_CLUSTER_INFO: "Cluster Master Name:IP:Port (comma separated)"
       IQ2_DATASURFER_CLUSTER_INFO: "Cluster DataSurfer IP:QueryPort (comma separated)"
-      IQ2_EDGE_CLUSTER_INFO: "Cluster Nginx Name:IP:Port (seperated Cluster-group: ';', InGroup-edge:',')" 
-
+      IQ2_EDGE_CLUSTER_INFO: "Cluster Nginx Name:IP:Port (seperated Cluster-group: ';', InGroup-edge:',')"
       IQ2_MASTER_API_PORT: 20000
+      # env for Judge
       IQ2_JUDGE_LOG_LEVEL: INFO
       IQ2_JUDGE_LISTEN_CONNECTOR: 20005
       IQ2_JUDGE_LISTEN_CONNECTOR_INFO: 20006
@@ -23,33 +23,45 @@ services:
       IQ2_JUDGE_LISTEN_API: 20008
       IQ2_JUDGE_LISTEN_CONNECTOR_HTTP: 20009
       IQ2_JUDGE_LISTEN_CONNECTOR_HTTP_INFO: 20010
+      # env for DataSurfer
       IQ2_DATASURFER_COLLECTOR_PORT: 20002
       IQ2_DATASURFER_QUERY_PORT: 20003
       IQ2_DATASURFER_TCP_PORT: 20012
+      # others
       IQ2_GRAFANA_PORT: 20001
-      IQ2_NGINX_MGR_PORT: 20004
       IQ2_RSYNC_PORT: 20011
       IQ2_QUOTA_TCP_PORT: 20013
       IQ2_QUOTA_HTTP_PORT: 20014
-      IQ2_SUPPORT_TCP_PORT: 20015
-      IQ2_SUPPORT_HTTP_PORT: 20016
-      IQ2_SCOUTER_TYPES: "Infra,Jennifer"
+      IQ2_SCOUTER_TYPES: "Infra" # Infra, HeartBeat, Common, JVM, Jennifer, InterMax
+      # env for APINF-EDGE
+      IQ2_NGINX_MGR_PORT: 20004
     volumes:
-      - iq2-data:/iq2/master-api/db:rw
-      - iq2-config:/iq2/master-api/config:rw
+      - apinf-data:/iq2/master-api/db:rw
+      - apinf-config:/iq2/master-api/config:rw
       - datasurfer-data:/iq2/DataSurfer/data:rw
-      - iq2-logs:/iq2/logs:rw
+      - apinf-logs:/iq2/logs:rw
       - grafana:/iq2/grafana/grafana-v11.0.0:rw
       - nginx-cert:/iq2/master-api/cert:rw
       - /etc/localtime:/etc/localtime:ro
-      - iq2-external-scouter:/iq2/external
+      - apinf-external-scouter:/iq2/external
     network_mode: "host"
+    # networks:
+    #   - apinf-net
+    # network_mode: "bridge"
+    # ports:
+    #   - "20000-20003:20000-20003"
+    #   - "20005-20014:20005-20014"
+
+# network mode가 host일 경우 주석 처리
+# networks:
+#   apinf-net:
+#     external: true
 
 volumes:
-    iq2-data:
-    iq2-config:
-    iq2-logs:
+    apinf-data:
+    apinf-config:
+    apinf-logs:
     datasurfer-data:
     grafana:
     nginx-cert:
-    iq2-external-scouter:
+    apinf-external-scouter:
