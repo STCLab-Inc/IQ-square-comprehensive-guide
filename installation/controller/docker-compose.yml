@@ -32,7 +32,7 @@ services:
       IQ2_RSYNC_PORT: 20011
       IQ2_QUOTA_TCP_PORT: 20013
       IQ2_QUOTA_HTTP_PORT: 20014
-      IQ2_SCOUTER_TYPES: "Infra" # Infra, HeartBeat, Common, JVM, Jennifer, InterMax
+      IQ2_SCOUTER_TYPES: "Infra,Jennifer" # Infra, HeartBeat, Common, JVM, Jennifer, InterMax
       # env for APINF-EDGE
       IQ2_NGINX_MGR_PORT: 20004
     volumes:
