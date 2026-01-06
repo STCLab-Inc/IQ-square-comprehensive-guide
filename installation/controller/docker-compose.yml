@@ -15,6 +15,8 @@ services:
       IQ2_DATASURFER_CLUSTER_INFO: "Cluster DataSurfer IP:QueryPort (comma separated)"
       IQ2_EDGE_CLUSTER_INFO: "Cluster Nginx Name:IP:Port (seperated Cluster-group: ';', InGroup-edge:',')"
       IQ2_MASTER_API_PORT: 20000
+      IQ2_MASTER_API_TOKEN_SECRET_KEY: "TOKEN_SECRET_KEY (site dependent)"
+      IQ2_MASTER_API_TOKEN_HASH_KEY: "TOKEN_HASH_KEY (site dependent)"
       # env for Judge
       IQ2_JUDGE_LOG_LEVEL: INFO
       IQ2_JUDGE_LISTEN_CONNECTOR: 20005
